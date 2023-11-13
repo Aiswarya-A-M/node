@@ -8,21 +8,25 @@
 // const logger=require ('./logger');
 // logger("message")
 const log=require ('./logger');
-const wrapper=require ('./moduleWrapper');
+const wrapper=require ('./modulewrapper');
 log("message")
 
 const path=require('path')  // node path enna built in function ndonn nokkum
 const pathObj=path.parse(__filename);                           // if  no app related modules nokkum (/..path)
 console.log(pathObj);
 
-const EventEmmitter=require('events');   //class defines the properties
-const emitter= new EventEmmitter();
+const EventEmitter=require('events');   //class defines the properties
+const emitter= new EventEmitter();
 emitter.on('messageLogged',function(){
-    console.log("Listener called")
+    console.log("Listener emitter called")
 })                               //like addeventlistener
 
 
 emitter.emit('messageLogged');          //making a noise emit meaning
+//emitter.on('messageLogged',function(arg){     //emmitter argument can be given
+//emitter.emit('messageLogged',{id:1,url:'http://'}); 
+
+
 
 const http=require('http');
 const server=http.createServer((req,res)=>{
