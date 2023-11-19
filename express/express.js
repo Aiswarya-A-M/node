@@ -1,7 +1,6 @@
 const express =require("express");
 const app =express();
 app.set("view engine",'ejs');
-
 app.get("/",(req,res)=>{
     console.log("here");
     //res.sendStatus(500);        // to pass internal server error at webpage
@@ -15,7 +14,7 @@ app.get("/",(req,res)=>{
 const userRouter =require('./router/users');
 app.use("/users",userRouter);
 
-//here we need to access /user/name, /user/time. don't need to repeat user , we creater router folder and user.js file
+//here we need to access /user/name, /user/time. don't need to repeat user , we created router folder and user.js file
 //then app.use("/users",userRouter)
 
-app.listen(3000);
+app.listen(5000);
